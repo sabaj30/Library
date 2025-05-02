@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using IcenLibrary.IRepositories;
+using IcenLibrary.Repositories;
+using System;
 
 namespace IcenLibrary
 {
     public partial class ShowBookForm : Form
     {
+        private readonly IBookRepository bookRepository;
+        
         public ShowBookForm()
         {
+            bookRepository = new BookRepository();
+            
             InitializeComponent();
-            FillDataGridViewBook();
+            FillDataGridViewBookFromDataBase();
         }
 
         private void dataGridViewBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -27,19 +25,10 @@ namespace IcenLibrary
         {
 
         }
-
-        private void FillDataGridViewBook()
+        private void FillDataGridViewBookFromDataBase()
         {
-            Dictionary<int, string> Books = new Dictionary<int, string>()
-            {
-                [1]="the idiot",
-                [2]="#C 10",
-                [3]="Saba"
-
-            };
-            dataGridViewBook.DataSource = Books.ToArray();
-
-
+            var books = bookRepository.GetAll();
+            dataGridViewBook.DataSource = books.ToArray();
         }
     }
 }

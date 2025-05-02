@@ -41,7 +41,7 @@
             ManageBookMenuStrip.Items.AddRange(new ToolStripItem[] { booksManagementToolStripMenuItem });
             ManageBookMenuStrip.Location = new Point(0, 0);
             ManageBookMenuStrip.Name = "ManageBookMenuStrip";
-            ManageBookMenuStrip.Size = new Size(800, 28);
+            ManageBookMenuStrip.Size = new Size(824, 28);
             ManageBookMenuStrip.TabIndex = 0;
             ManageBookMenuStrip.Text = "ManageBookMenuStrip";
             // 
@@ -55,7 +55,7 @@
             // showBooksToolStripMenuItem
             // 
             showBooksToolStripMenuItem.Name = "showBooksToolStripMenuItem";
-            showBooksToolStripMenuItem.Size = new Size(224, 26);
+            showBooksToolStripMenuItem.Size = new Size(172, 26);
             showBooksToolStripMenuItem.Text = "Show Books";
             showBooksToolStripMenuItem.Click += showBooksToolStripMenuItem_Click;
             // 
@@ -65,7 +65,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(824, 486);
             Controls.Add(ManageBookMenuStrip);
             MainMenuStrip = ManageBookMenuStrip;
             Name = "MainForm";
