@@ -7,11 +7,11 @@ namespace IcenLibrary
     public partial class ShowBookForm : Form
     {
         private readonly IBookRepository bookRepository;
-        
+
         public ShowBookForm()
         {
             bookRepository = new BookRepository();
-            
+
             InitializeComponent();
             FillDataGridViewBookFromDataBase();
         }
@@ -29,6 +29,16 @@ namespace IcenLibrary
         {
             var books = bookRepository.GetAll();
             dataGridViewBook.DataSource = books.ToArray();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(textBox1.Text)!)
+            {
+                var result = bookRepository.Search(textBox1.Text);
+                dataGridViewBook.DataSource = result;
+            }
+            
         }
     }
 }

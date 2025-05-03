@@ -9,6 +9,6 @@ namespace IcenLibrary.IRepositories
         void Delete(int id);
         Book[] GetAll();
         Book GetById(int id);
-        Book[] Search(string name);
+        Book[] Search(string text);
     }
 }

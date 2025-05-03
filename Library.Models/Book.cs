@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bogus;
+using System;
 
 namespace IcenLibrary.Library.Models
 {
@@ -10,6 +11,9 @@ namespace IcenLibrary.Library.Models
         public string? Translator { get; set; }
         public int PageCount { get; set; }
         public string? Janer { get; set; }
+        public ICollection<Author>? BookAuthor { get; set; }
 
     }
+
 }
+
