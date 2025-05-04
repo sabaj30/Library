@@ -24,13 +24,14 @@ namespace IcenLibrary.Repositories
             throw new NotImplementedException();
         }
 
-        public Book[] GetAll()
+        public Book[] GetAll(string procedureName)
         {
-            
+
             var books = new Book[1000];
             int index = 0;
 
-            SqlCommand sqlCommand = new SqlCommand("Usp_Book_GetAll", sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand(procedureName, sqlConnection);
+
             sqlCommand.CommandType = CommandType.StoredProcedure;
             SqlDataReader bookReader;
 
@@ -60,12 +61,13 @@ namespace IcenLibrary.Repositories
             throw new NotImplementedException();
         }
 
-        public Book[] Search(string text)
+        public Book[] Search(string procedureName, string text)
         {
             var books = new Book[1000];
             int index = 0;
 
-            SqlCommand sqlCommand = new SqlCommand("Usp_Book_Search", sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand(procedureName, sqlConnection);
+
             sqlCommand.CommandType = CommandType.StoredProcedure;
 
             sqlCommand.Parameters.AddWithValue("@Text", text);
@@ -76,7 +78,7 @@ namespace IcenLibrary.Repositories
             bookReader = sqlCommand.ExecuteReader();
             while (bookReader.Read())
             {
-                if (bookReader.HasRows) 
+                if (bookReader.HasRows)
                 {
                     var book = new Book
                     {
@@ -90,7 +92,7 @@ namespace IcenLibrary.Repositories
                     books[index] = book;
                     index++;
                 }
-                
+
             }
             sqlConnection.Close();
             return books;

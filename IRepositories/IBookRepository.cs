@@ -7,8 +7,8 @@ namespace IcenLibrary.IRepositories
     {
         void Add(Book book);
         void Delete(int id);
-        Book[] GetAll();
+        Book[] GetAll(string procedureName);
         Book GetById(int id);
-        Book[] Search(string text);
+        Book[] Search(string procedureName, string text);
     }
 }

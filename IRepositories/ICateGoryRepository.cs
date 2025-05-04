@@ -9,6 +9,7 @@ namespace IcenLibrary.IRepositories
 {
     public interface ICateGoryRepository
     {
-        Category[] GetAll();
+        Category[] GetAll(string procedureName);
+        Category[] Search(string procedureName, string text);
     }
 }

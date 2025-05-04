@@ -27,7 +27,7 @@ namespace IcenLibrary
         }
         private void FillDataGridViewBookFromDataBase()
         {
-            var books = bookRepository.GetAll();
+            var books = bookRepository.GetAll("Usp_Book_GetAll");
             dataGridViewBook.DataSource = books.ToArray();
         }
 
@@ -35,7 +35,7 @@ namespace IcenLibrary
         {
             if(string.IsNullOrEmpty(textBox1.Text)!)
             {
-                var result = bookRepository.Search(textBox1.Text);
+                var result = bookRepository.Search("Usp_Book_Search", textBox1.Text);
                 dataGridViewBook.DataSource = result;
             }
             
