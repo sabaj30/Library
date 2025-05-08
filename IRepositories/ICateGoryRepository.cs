@@ -1,6 +1,6 @@
-﻿using IcenLibrary.Library.Models;
+﻿using IceLibrary.Library.Models;
 
-namespace IcenLibrary.IRepositories
+namespace IceLibrary.IRepositories
 {
     public interface ICateGoryRepository : IQueryRepository
     {

@@ -1,4 +1,4 @@
-﻿namespace IcenLibrary.ConnectionString
+﻿namespace IceLibrary.ConnectionString
 {
     public class ConnectionStringDB
     {

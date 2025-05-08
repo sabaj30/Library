@@ -1,6 +1,6 @@
 ﻿using Bogus;
 
-namespace IcenLibrary.Library.Models
+namespace IceLibrary.Library.Models
 {
     public class Book
     {

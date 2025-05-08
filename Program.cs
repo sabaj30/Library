@@ -1,4 +1,4 @@
-namespace IcenLibrary
+namespace IceLibrary
 {
     internal static class Program
     {

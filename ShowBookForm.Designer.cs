@@ -1,4 +1,4 @@
-﻿namespace IcenLibrary
+﻿namespace IceLibrary
 {
     partial class ShowBookForm
     {
@@ -20,23 +20,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowBookForm));
-            dataGridViewBook = new DataGridView();
+            DataGridViewBook = new DataGridView();
             textBox1 = new TextBox();
-            btnSearch = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewBook).BeginInit();
+            BtnSearch = new Button();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewBook).BeginInit();
             SuspendLayout();
             // 
-            // dataGridViewBook
+            // DataGridViewBook
             // 
-            dataGridViewBook.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridViewBook.BackgroundColor = Color.SteelBlue;
-            dataGridViewBook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewBook.Location = new Point(38, 108);
-            dataGridViewBook.Name = "dataGridViewBook";
-            dataGridViewBook.RowHeadersWidth = 51;
-            dataGridViewBook.Size = new Size(727, 318);
-            dataGridViewBook.TabIndex = 0;
-            dataGridViewBook.CellContentClick += dataGridViewBook_CellContentClick;
+            DataGridViewBook.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DataGridViewBook.BackgroundColor = Color.SteelBlue;
+            DataGridViewBook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DataGridViewBook.Location = new Point(38, 108);
+            DataGridViewBook.Name = "DataGridViewBook";
+            DataGridViewBook.RowHeadersWidth = 51;
+            DataGridViewBook.Size = new Size(727, 318);
+            DataGridViewBook.TabIndex = 0;
+            DataGridViewBook.CellContentClick += DataGridViewBook_CellContentClick;
             // 
             // textBox1
             // 
@@ -45,15 +45,15 @@
             textBox1.Size = new Size(177, 27);
             textBox1.TabIndex = 1;
             // 
-            // btnSearch
+            // BtnSearch
             // 
-            btnSearch.Location = new Point(422, 51);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(114, 30);
-            btnSearch.TabIndex = 2;
-            btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
+            BtnSearch.Location = new Point(422, 51);
+            BtnSearch.Name = "BtnSearch";
+            BtnSearch.Size = new Size(114, 30);
+            BtnSearch.TabIndex = 2;
+            BtnSearch.Text = "Search";
+            BtnSearch.UseVisualStyleBackColor = true;
+            BtnSearch.Click += BtnSearch_Click;
             // 
             // ShowBookForm
             // 
@@ -61,21 +61,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(821, 492);
-            Controls.Add(btnSearch);
+            Controls.Add(BtnSearch);
             Controls.Add(textBox1);
-            Controls.Add(dataGridViewBook);
+            Controls.Add(DataGridViewBook);
             Name = "ShowBookForm";
             Text = "Books";
             Load += ShowBookForm_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridViewBook).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewBook).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridViewBook;
+        private DataGridView DataGridViewBook;
         private TextBox textBox1;
-        private Button btnSearch;
+        private Button BtnSearch;
     }
 }

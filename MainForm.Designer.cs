@@ -1,4 +1,4 @@
-﻿namespace IcenLibrary
+﻿namespace IceLibrary
 {
     partial class MainForm
     {
@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             ManageBookMenuStrip = new MenuStrip();
             booksManagementToolStripMenuItem = new ToolStripMenuItem();
-            showBooksToolStripMenuItem = new ToolStripMenuItem();
+            ShowBooksToolStripMenuItem = new ToolStripMenuItem();
+            AddBooksToolStripMenuItem = new ToolStripMenuItem();
             ManageBookMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,17 +48,24 @@
             // 
             // booksManagementToolStripMenuItem
             // 
-            booksManagementToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showBooksToolStripMenuItem });
+            booksManagementToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ShowBooksToolStripMenuItem, AddBooksToolStripMenuItem });
             booksManagementToolStripMenuItem.Name = "booksManagementToolStripMenuItem";
             booksManagementToolStripMenuItem.Size = new Size(158, 24);
             booksManagementToolStripMenuItem.Text = "Book's Management";
             // 
-            // showBooksToolStripMenuItem
+            // ShowBooksToolStripMenuItem
             // 
-            showBooksToolStripMenuItem.Name = "showBooksToolStripMenuItem";
-            showBooksToolStripMenuItem.Size = new Size(172, 26);
-            showBooksToolStripMenuItem.Text = "Show Books";
-            showBooksToolStripMenuItem.Click += showBooksToolStripMenuItem_Click;
+            ShowBooksToolStripMenuItem.Name = "ShowBooksToolStripMenuItem";
+            ShowBooksToolStripMenuItem.Size = new Size(224, 26);
+            ShowBooksToolStripMenuItem.Text = "Show Books";
+            ShowBooksToolStripMenuItem.Click += ShowBooksToolStripMenuItem_Click;
+            // 
+            // AddBooksToolStripMenuItem
+            // 
+            AddBooksToolStripMenuItem.Name = "AddBooksToolStripMenuItem";
+            AddBooksToolStripMenuItem.Size = new Size(224, 26);
+            AddBooksToolStripMenuItem.Text = "Add Books";
+            AddBooksToolStripMenuItem.Click += AddBooksToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -81,6 +89,7 @@
 
         private MenuStrip ManageBookMenuStrip;
         private ToolStripMenuItem booksManagementToolStripMenuItem;
-        private ToolStripMenuItem showBooksToolStripMenuItem;
+        private ToolStripMenuItem ShowBooksToolStripMenuItem;
+        private ToolStripMenuItem AddBooksToolStripMenuItem;
     }
 }

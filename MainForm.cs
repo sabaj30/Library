@@ -1,4 +1,4 @@
-namespace IcenLibrary
+namespace IceLibrary
 {
     public partial class MainForm : Form
     {
@@ -12,11 +12,17 @@ namespace IcenLibrary
 
         }
 
-        private void showBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ShowBooksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowBookForm showBookForm = new ShowBookForm();
+            var showBookForm = new ShowBookForm();
             showBookForm.Show();
-            
+
+        }
+
+        private void AddBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var addBookForm = new AddBookForm();
+            addBookForm.Show();
         }
     }
 }

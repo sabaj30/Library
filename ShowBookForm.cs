@@ -1,12 +1,12 @@
-﻿using IcenLibrary.IRepositories;
-using IcenLibrary.Library.Models;
-using IcenLibrary.Repositories;
+﻿using IceLibrary.IRepositories;
+using IceLibrary.Library.Models;
+using IceLibrary.Repositories;
 
-namespace IcenLibrary
+namespace IceLibrary
 {
     public partial class ShowBookForm : Form
     {
-        private readonly IBookRepository bookRepository;
+        protected readonly IBookRepository bookRepository;
 
         public ShowBookForm()
         {
@@ -16,7 +16,7 @@ namespace IcenLibrary
             FillDataGridViewBookFromDataBase();
         }
 
-        private void dataGridViewBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridViewBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -29,7 +29,7 @@ namespace IcenLibrary
         {
             var books = bookRepository.GetAll("Usp_Book_GetAll");
             Book[] booksLibrary = MapToBook(books);
-            dataGridViewBook.DataSource = booksLibrary;
+            DataGridViewBook.DataSource = booksLibrary;
         }
 
         private static Book[] MapToBook(System.Data.DataTable dataTableBook)
@@ -41,11 +41,12 @@ namespace IcenLibrary
             {
                 var book = new Book()
                 {
-                    Id = Convert.ToInt32(dataRow["Id"]),
+
+                    Id = dataRow["Id"] != DBNull.Value ? Convert.ToInt32(dataRow["Id"]) : 0,
                     Name = dataRow["Name"].ToString()!,
                     Publisher = dataRow["Publisher"].ToString(),
                     Translator = dataRow["Translator"].ToString(),
-                    PageCount = Convert.ToInt32(dataRow["PageCount"]),
+                    PageCount = dataRow["PageCount"] != DBNull.Value ? Convert.ToInt32(dataRow["PageCount"]) : 0,
                     Janer = dataRow["Janer"].ToString()
                 };
                 booksLibrary[index] = book;
@@ -53,10 +54,10 @@ namespace IcenLibrary
             }
             return booksLibrary;
         }
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void BtnSearch_Click(object sender, EventArgs e)
         {
             var result = bookRepository.Search("Usp_Book_Search", textBox1.Text);
-            dataGridViewBook.DataSource = result;
+            DataGridViewBook.DataSource = result;
         }
     }
 }

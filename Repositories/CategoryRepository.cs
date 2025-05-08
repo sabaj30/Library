@@ -1,6 +1,6 @@
-﻿using IcenLibrary.IRepositories;
+﻿using IceLibrary.IRepositories;
 
-namespace IcenLibrary.Repositories
+namespace IceLibrary.Repositories
 {
     public class CategoryRepository : QueryRepository, ICateGoryRepository
     {
