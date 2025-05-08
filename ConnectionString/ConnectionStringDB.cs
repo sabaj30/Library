@@ -1,9 +1,4 @@
-﻿using System;
-using IcenLibrary.IRepositories;
-using IcenLibrary.Library.Models;
-using System.Data.SqlClient;
-
-namespace IcenLibrary.ConnectionString
+﻿namespace IcenLibrary.ConnectionString
 {
     public class ConnectionStringDB
     {

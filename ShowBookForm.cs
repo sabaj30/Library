@@ -1,6 +1,6 @@
 ﻿using IcenLibrary.IRepositories;
+using IcenLibrary.Library.Models;
 using IcenLibrary.Repositories;
-using System;
 
 namespace IcenLibrary
 {
@@ -28,17 +28,35 @@ namespace IcenLibrary
         private void FillDataGridViewBookFromDataBase()
         {
             var books = bookRepository.GetAll("Usp_Book_GetAll");
-            dataGridViewBook.DataSource = books.ToArray();
+            Book[] booksLibrary = MapToBook(books);
+            dataGridViewBook.DataSource = booksLibrary;
         }
 
+        private static Book[] MapToBook(System.Data.DataTable dataTableBook)
+        {
+            Book[] booksLibrary = new Book[50];
+            int index = 0;
+
+            foreach (var dataRow in dataTableBook.Select())
+            {
+                var book = new Book()
+                {
+                    Id = Convert.ToInt32(dataRow["Id"]),
+                    Name = dataRow["Name"].ToString()!,
+                    Publisher = dataRow["Publisher"].ToString(),
+                    Translator = dataRow["Translator"].ToString(),
+                    PageCount = Convert.ToInt32(dataRow["PageCount"]),
+                    Janer = dataRow["Janer"].ToString()
+                };
+                booksLibrary[index] = book;
+                index++;
+            }
+            return booksLibrary;
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(textBox1.Text)!)
-            {
-                var result = bookRepository.Search("Usp_Book_Search", textBox1.Text);
-                dataGridViewBook.DataSource = result;
-            }
-            
+            var result = bookRepository.Search("Usp_Book_Search", textBox1.Text);
+            dataGridViewBook.DataSource = result;
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace IcenLibrary.Library.Models
+﻿namespace IcenLibrary.Library.Models
 {
     public class Author
     {
