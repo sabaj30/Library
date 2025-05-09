@@ -1,9 +1,16 @@
 ﻿namespace IceLibrary
 {
-    partial class AddBookForm
+    partial class UpdateBookForm
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBookForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateBookForm));
+            groupBox3 = new GroupBox();
+            BtnSave = new Button();
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
             TxtGenre = new TextBox();
@@ -32,22 +41,39 @@
             lblTranslator = new Label();
             lblPublisher = new Label();
             lblBookName = new Label();
-            groupBox3 = new GroupBox();
-            BtnSave = new Button();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            groupBox3.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
             SuspendLayout();
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(BtnSave);
+            groupBox3.Location = new Point(12, 384);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(185, 86);
+            groupBox3.TabIndex = 3;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "groupBox3";
+            // 
+            // BtnSave
+            // 
+            BtnSave.Location = new Point(6, 38);
+            BtnSave.Name = "BtnSave";
+            BtnSave.Size = new Size(94, 29);
+            BtnSave.TabIndex = 0;
+            BtnSave.Text = "Save";
+            BtnSave.UseVisualStyleBackColor = true;
+            BtnSave.Click += BtnSave_Click;
             // 
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Controls.Add(groupBox2);
-            groupBox1.Location = new Point(12, 30);
+            groupBox1.Location = new Point(29, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(758, 303);
-            groupBox1.TabIndex = 0;
+            groupBox1.Size = new Size(769, 275);
+            groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
@@ -61,7 +87,7 @@
             groupBox2.Controls.Add(lblTranslator);
             groupBox2.Controls.Add(lblPublisher);
             groupBox2.Controls.Add(lblBookName);
-            groupBox2.Location = new Point(366, 62);
+            groupBox2.Location = new Point(373, 17);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(355, 213);
             groupBox2.TabIndex = 0;
@@ -132,60 +158,38 @@
             lblBookName.TabIndex = 0;
             lblBookName.Text = "BookName";
             // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(BtnSave);
-            groupBox3.Location = new Point(12, 339);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(758, 86);
-            groupBox3.TabIndex = 1;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "groupBox3";
-            // 
-            // BtnSave
-            // 
-            BtnSave.Location = new Point(6, 38);
-            BtnSave.Name = "BtnSave";
-            BtnSave.Size = new Size(94, 29);
-            BtnSave.TabIndex = 0;
-            BtnSave.Text = "Save";
-            BtnSave.UseVisualStyleBackColor = true;
-            BtnSave.Click += BtnSave_Click;
-            // 
-            // AddBookForm
+            // UpdateBookForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(807, 459);
+            ClientSize = new Size(819, 482);
             Controls.Add(groupBox3);
             Controls.Add(groupBox1);
-            Name = "AddBookForm";
-            Text = "AddBook";
-            FormClosed += AddBookForm_FormClosed;
-            Load += AddBookForm_Load;
+            Name = "UpdateBookForm";
+            Text = "Update";
+            Load += UpdateBookForm_Load;
+            groupBox3.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
+        private GroupBox groupBox3;
+        private Button BtnSave;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
+        private TextBox TxtGenre;
+        private TextBox TxtTranslator;
+        private TextBox TxtPublisher;
+        private TextBox TxtBookName;
         private Label lblGenre;
         private Label lblTranslator;
         private Label lblPublisher;
         private Label lblBookName;
-        private TextBox TxtPublisher;
-        private TextBox TxtBookName;
-        private TextBox TxtGenre;
-        private TextBox TxtTranslator;
-        private GroupBox groupBox3;
-        private Button BtnSave;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -21,6 +21,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowBookForm));
             DataGridViewBook = new DataGridView();
+            BtnUpdate = new DataGridViewButtonColumn();
             textBox1 = new TextBox();
             BtnSearch = new Button();
             ((System.ComponentModel.ISupportInitialize)DataGridViewBook).BeginInit();
@@ -31,12 +32,23 @@
             DataGridViewBook.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DataGridViewBook.BackgroundColor = Color.SteelBlue;
             DataGridViewBook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DataGridViewBook.Columns.AddRange(new DataGridViewColumn[] { BtnUpdate });
             DataGridViewBook.Location = new Point(38, 108);
             DataGridViewBook.Name = "DataGridViewBook";
             DataGridViewBook.RowHeadersWidth = 51;
             DataGridViewBook.Size = new Size(727, 318);
             DataGridViewBook.TabIndex = 0;
             DataGridViewBook.CellContentClick += DataGridViewBook_CellContentClick;
+            // 
+            // BtnUpdate
+            // 
+            BtnUpdate.HeaderText = "Edit";
+            BtnUpdate.MinimumWidth = 6;
+            BtnUpdate.Name = "BtnUpdate";
+            BtnUpdate.Text = "Choice";
+            BtnUpdate.ToolTipText = "Choice";
+            BtnUpdate.UseColumnTextForButtonValue = true;
+            BtnUpdate.Width = 125;
             // 
             // textBox1
             // 
@@ -77,5 +89,6 @@
         private DataGridView DataGridViewBook;
         private TextBox textBox1;
         private Button BtnSearch;
+        private DataGridViewButtonColumn BtnUpdate;
     }
 }

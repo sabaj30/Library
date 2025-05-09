@@ -30,9 +30,22 @@ namespace IceLibrary.Repositories
             throw new NotImplementedException();
         }
 
-        public Book GetById(int id)
+        public void Update(int id, Book book)
         {
-            throw new NotImplementedException();
+            var sqlCommand = new SqlCommand("Usp_Book_Update", sqlConnection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            sqlCommand.Parameters.AddWithValue("@Id",id);
+            sqlCommand.Parameters.AddWithValue("@Name", book.Name);
+            sqlCommand.Parameters.AddWithValue("@Publisher", book.Publisher);
+            sqlCommand.Parameters.AddWithValue("@Translator", book.Translator);
+            sqlCommand.Parameters.AddWithValue("@Janer", book.Janer);
+
+            sqlConnection.Open();
+            sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
         }
     }
 }

@@ -7,6 +7,7 @@ namespace IceLibrary.IRepositories
     {
         DataTable GetAll(string procedureName);
         DataTable Search(string procedureName, string text);
+        DataTable GetById(string procedureName,int id);
      
     }
 }

@@ -18,7 +18,14 @@ namespace IceLibrary
 
         private void DataGridViewBook_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == 0)
+            {
+                var dgv = ((DataGridView)sender).Rows[e.RowIndex].Cells["id"].Value.ToString();
+                int id = Convert.ToInt32(dgv);
+                var updateForm = new UpdateBookForm(id);
+                updateForm.Show();
 
+            }
         }
 
         private void ShowBookForm_Load(object sender, EventArgs e)
@@ -59,5 +66,7 @@ namespace IceLibrary
             var result = bookRepository.Search("Usp_Book_Search", textBox1.Text);
             DataGridViewBook.DataSource = result;
         }
+
+
     }
 }
