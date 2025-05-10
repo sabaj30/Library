@@ -1,12 +1,11 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
 using IceLibrary.Library.Models;
-using IceLibrary.Repositories;
 using IceLibrary.IRepositories;
 
 namespace IceLibrary.Repositories
 {
-    public class BookRepository : QueryRepository, IBookRepository
+    public class BookRepository : QueryRepository, IBookRepository  
     {
         public void Add(Book book)
         {
@@ -18,7 +17,7 @@ namespace IceLibrary.Repositories
             sqlCommand.Parameters.AddWithValue("@Name", book.Name);
             sqlCommand.Parameters.AddWithValue("@Publisher", book.Publisher);
             sqlCommand.Parameters.AddWithValue("@Translator", book.Translator);
-            sqlCommand.Parameters.AddWithValue("@Janer", book.Janer );
+            sqlCommand.Parameters.AddWithValue("@Genre", book.Genre );
 
             sqlConnection.Open();
             sqlCommand.ExecuteNonQuery();
@@ -41,7 +40,7 @@ namespace IceLibrary.Repositories
             sqlCommand.Parameters.AddWithValue("@Name", book.Name);
             sqlCommand.Parameters.AddWithValue("@Publisher", book.Publisher);
             sqlCommand.Parameters.AddWithValue("@Translator", book.Translator);
-            sqlCommand.Parameters.AddWithValue("@Janer", book.Janer);
+            sqlCommand.Parameters.AddWithValue("@Genre", book.Genre);
 
             sqlConnection.Open();
             sqlCommand.ExecuteNonQuery();
