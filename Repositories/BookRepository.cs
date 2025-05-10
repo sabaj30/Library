@@ -5,7 +5,7 @@ using IceLibrary.IRepositories;
 
 namespace IceLibrary.Repositories
 {
-    public class BookRepository : QueryRepository, IBookRepository
+    public class BookRepository : QueryRepository, IBookRepository, IQueryRepository
     {
         public void Add(Book book)
         {

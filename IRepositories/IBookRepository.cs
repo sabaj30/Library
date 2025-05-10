@@ -2,7 +2,7 @@
 
 namespace IceLibrary.IRepositories
 {
-    public interface IBookRepository :IQueryRepository
+    public interface IBookRepository : IQueryRepository
     {
         void Add(Book book);
         void Delete(int id);
