@@ -54,7 +54,7 @@ namespace IceLibrary
                     Publisher = dataRow["Publisher"].ToString(),
                     Translator = dataRow["Translator"].ToString(),
                     PageCount = dataRow["PageCount"] != DBNull.Value ? Convert.ToInt32(dataRow["PageCount"]) : 0,
-                    Janer = dataRow["Janer"].ToString()
+                    Genre = dataRow["Genre"].ToString()
                 };
                 booksLibrary[index] = book;
                 index++;

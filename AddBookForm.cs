@@ -21,7 +21,7 @@ namespace IceLibrary
                 Name = TxtBookName.Text,
                 Publisher = TxtPublisher.Text,
                 Translator = TxtTranslator.Text,
-                Janer = TxtGenre.Text
+                Genre = TxtGenre.Text
             };
             bookAddRepository.Add(book);
 

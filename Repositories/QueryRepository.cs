@@ -1,9 +1,7 @@
 ﻿using IceLibrary.ConnectionString;
 using IceLibrary.IRepositories;
-using IceLibrary.Library.Models;
 using System.Data;
 using System.Data.SqlClient;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace IceLibrary.Repositories
 {

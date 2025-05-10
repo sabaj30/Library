@@ -23,7 +23,7 @@ namespace IceLibrary
                 Name = TxtBookName.Text,
                 Publisher = TxtPublisher.Text,
                 Translator = TxtTranslator.Text,
-                Janer = TxtGenre.Text
+                Genre = TxtGenre.Text
             };
             bookRepository.Update(id, book);
             MessageBox.Show("Change");
@@ -35,7 +35,7 @@ namespace IceLibrary
             TxtBookName.Text = book["Name"].ToString();
             TxtPublisher.Text = book["Publisher"].ToString();
             TxtTranslator.Text = book["Translator"].ToString();
-            TxtGenre.Text = book["Janer"].ToString();
+            TxtGenre.Text = book["Genre"].ToString();
         }
 
         private void ValidateBook()

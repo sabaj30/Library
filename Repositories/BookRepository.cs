@@ -1,7 +1,6 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
 using IceLibrary.Library.Models;
-using IceLibrary.Repositories;
 using IceLibrary.IRepositories;
 
 namespace IceLibrary.Repositories
@@ -18,7 +17,7 @@ namespace IceLibrary.Repositories
             sqlCommand.Parameters.AddWithValue("@Name", book.Name);
             sqlCommand.Parameters.AddWithValue("@Publisher", book.Publisher);
             sqlCommand.Parameters.AddWithValue("@Translator", book.Translator);
-            sqlCommand.Parameters.AddWithValue("@Janer", book.Janer );
+            sqlCommand.Parameters.AddWithValue("@Genre", book.Genre);
 
             sqlConnection.Open();
             sqlCommand.ExecuteNonQuery();
@@ -29,7 +28,6 @@ namespace IceLibrary.Repositories
         {
             throw new NotImplementedException();
         }
-
         public void Update(int id, Book book)
         {
             var sqlCommand = new SqlCommand("Usp_Book_Update", sqlConnection)
@@ -37,11 +35,11 @@ namespace IceLibrary.Repositories
                 CommandType = CommandType.StoredProcedure
             };
 
-            sqlCommand.Parameters.AddWithValue("@Id",id);
+            sqlCommand.Parameters.AddWithValue("@Id", id);
             sqlCommand.Parameters.AddWithValue("@Name", book.Name);
             sqlCommand.Parameters.AddWithValue("@Publisher", book.Publisher);
             sqlCommand.Parameters.AddWithValue("@Translator", book.Translator);
-            sqlCommand.Parameters.AddWithValue("@Janer", book.Janer);
+            sqlCommand.Parameters.AddWithValue("@Genre", book.Genre);
 
             sqlConnection.Open();
             sqlCommand.ExecuteNonQuery();
