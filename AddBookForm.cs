@@ -10,22 +10,24 @@ namespace IceLibrary
         public AddBookForm()
         {
             InitializeComponent();
-            bookAddRepository = new BookRepository();
+            bookAddRepository = new EFBookRepository();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
             ValidateBook();
-            var book = new Book()
+            var books = new Book()
             {
                 Name = TxtBookName.Text,
                 Publisher = TxtPublisher.Text,
                 Translator = TxtTranslator.Text,
-                Genre = TxtGenre.Text
+                Genre = TxtGenre.Text,
+
             };
-            bookAddRepository.Add(book);
+            bookAddRepository.Add(books);
 
             MessageBox.Show("Book added successfully");
+            this.Close();
 
         }
 

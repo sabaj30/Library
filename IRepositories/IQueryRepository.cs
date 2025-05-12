@@ -5,9 +5,6 @@ namespace IceLibrary.IRepositories
 {
     public interface IQueryRepository
     {
-        DataTable GetAll(string procedureName);
-        DataTable Search(string procedureName, string text);
-        DataTable GetById(string procedureName,int id);
-     
+        //DataTable Search(string procedureName, string text);     
     }
 }

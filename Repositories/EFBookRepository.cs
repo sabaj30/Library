@@ -1,39 +1,45 @@
-﻿using IceLibrary.IRepositories;
+﻿using IceLibrary.Contexts;
+using IceLibrary.IRepositories;
 using IceLibrary.Library.Models;
-using System.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace IceLibrary.Repositories
 {
     public class EFBookRepository : IBookRepository
     {
+        private readonly LibraryContext BookContext;
+        public EFBookRepository()
+        {
+            BookContext = new LibraryContext();
+        }
+
         public void Add(Book book)
         {
-            throw new NotImplementedException();
+            BookContext.Book.Add(book);
+            BookContext.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var book = BookContext.Book.First(x => x.Id == id);
+            BookContext.Book.Remove(book);
+            BookContext.SaveChanges();
         }
 
-        public DataTable GetAll(string procedureName)
+        public List<Book> GetAll()
         {
-            throw new NotImplementedException();
+            return BookContext.Book.ToList();
         }
 
-        public DataTable GetById(string procedureName, int id)
+        public Book GetById(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public DataTable Search(string procedureName, string text)
-        {
-            throw new NotImplementedException();
+            return BookContext.Book.AsNoTracking().FirstOrDefault(x => x.Id == id)!;
         }
 
         public void Update(int id, Book book)
         {
-            throw new NotImplementedException();
+            BookContext.Book.Update(book);
+            BookContext.SaveChanges();
         }
     }
 }

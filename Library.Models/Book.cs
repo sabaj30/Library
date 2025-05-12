@@ -20,7 +20,7 @@ namespace IceLibrary.Library.Models
 
         [StringLength(32)]
         public string? Translator { get; set; }
-        public int? PageCount { get; set; }
+        public int? PageCount { get; set; } = 10;
 
         [StringLength(32)]
         public string? Genre { get; set; }

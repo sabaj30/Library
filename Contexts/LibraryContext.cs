@@ -6,7 +6,7 @@ namespace IceLibrary.Contexts
 {
     public class LibraryContext : DbContext
     {
-        public DbSet<Book>? Book { get; set; }
+        public DbSet<Book> Book { get; set; }
         public DbSet<Author>? Author { get; set; }
         public DbSet<BookAuthor>? AuthorAuthor { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
